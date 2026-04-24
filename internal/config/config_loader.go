@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	DefaultPort     = 8080
+	DefaultPort     = 9090
 	DefaultHostname = "localhost"
 )
 

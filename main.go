@@ -26,7 +26,7 @@ import (
 //	@title			Choreo Reading List
 //	@version		1.0
 //	@description	This is a sample service that manages a list of reading items.
-//	@host			localhost:8080
+//	@host			localhost:9090
 //	@BasePath		/api/v1/reading-list
 func main() {
 	app := fiber.New(fiber.Config{

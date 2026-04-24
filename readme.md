@@ -135,23 +135,23 @@ cd service-go-reading-list
 go run main.go
 ```
 
-The service will start on http://localhost:8080
+The service will start on http://localhost:9090
 
 ### Access Swagger UI
 
 Open your browser and navigate to:
 ```
-http://localhost:8080/swagger/index.html
+http://localhost:9090/swagger/index.html
 ```
 
 ### Test with cURL
 
 ```bash
 # List all books
-curl http://localhost:8080/api/v1/reading-list/books
+curl http://localhost:9090/api/v1/reading-list/books
 
 # Add a new book
-curl -X POST http://localhost:8080/api/v1/reading-list/books \
+curl -X POST http://localhost:9090/api/v1/reading-list/books \
   -H "Content-Type: application/json" \
   -d '{
     "title": "The Hobbit",
@@ -160,10 +160,10 @@ curl -X POST http://localhost:8080/api/v1/reading-list/books \
   }'
 
 # Get a specific book (replace {id} with actual book ID)
-curl http://localhost:8080/api/v1/reading-list/books/{id}
+curl http://localhost:9090/api/v1/reading-list/books/{id}
 
 # Update a book
-curl -X PUT http://localhost:8080/api/v1/reading-list/books/{id} \
+curl -X PUT http://localhost:9090/api/v1/reading-list/books/{id} \
   -H "Content-Type: application/json" \
   -d '{
     "title": "The Hobbit",
@@ -172,7 +172,7 @@ curl -X PUT http://localhost:8080/api/v1/reading-list/books/{id} \
   }'
 
 # Delete a book
-curl -X DELETE http://localhost:8080/api/v1/reading-list/books/{id}
+curl -X DELETE http://localhost:9090/api/v1/reading-list/books/{id}
 ```
 
 ## Configuration

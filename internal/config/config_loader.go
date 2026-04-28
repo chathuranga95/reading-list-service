@@ -50,6 +50,7 @@ func LoadInitialData() (data InitialData) {
 	if err := json.Unmarshal(contents, &data); err != nil {
 		log.Fatalf("failed to unmarshal initial data at [%s]: %s", config.InitialDataPath, err)
 	}
+	log.Printf("loaded initial data from [%s] with %d books", config.InitialDataPath, len(data.Books))
 	return
 }
 

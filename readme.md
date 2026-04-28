@@ -180,3 +180,27 @@ curl -X DELETE http://localhost:9090/api/v1/reading-list/books/{id}
 ### Environment Variables
 
 See [config.go](internal/config/config.go) for available configuration options.
+
+### Mounted Initial Data
+
+The service can preload books from a mounted JSON file. Set `INIT_DATA_PATH` to
+the mounted file path, or mount a file at the default path:
+
+```text
+/etc/reading-list/initial_data.json
+```
+
+The file format is:
+
+```json
+{
+  "books": [
+    {
+      "id": "mount-demo-1",
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "status": "reading"
+    }
+  ]
+}
+```

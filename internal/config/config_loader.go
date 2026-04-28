@@ -11,8 +11,9 @@ import (
 )
 
 const (
-	DefaultPort     = 9090
-	DefaultHostname = "localhost"
+	DefaultPort            = 9090
+	DefaultHostname        = "localhost"
+	DefaultInitialDataPath = "/etc/reading-list/initial_data.json"
 )
 
 var (
@@ -33,7 +34,7 @@ func LoadConfig() (*Config, error) {
 		Hostname:        getEnvString(Hostname, DefaultHostname),
 		Port:            getEnvInt(Port, DefaultPort),
 		Env:             os.Getenv(EnvName),
-		InitialDataPath: os.Getenv(initialDataPath),
+		InitialDataPath: resolveInitialDataPath(os.Getenv(initialDataPath), DefaultInitialDataPath, os.Stat),
 	}
 	return &config, nil
 }
@@ -70,4 +71,14 @@ func getEnvString(key string, defaultVal string) string {
 		return defaultVal
 	}
 	return s
+}
+
+func resolveInitialDataPath(envPath string, defaultPath string, stat func(string) (os.FileInfo, error)) string {
+	if envPath != "" {
+		return envPath
+	}
+	if _, err := stat(defaultPath); err == nil {
+		return defaultPath
+	}
+	return ""
 }

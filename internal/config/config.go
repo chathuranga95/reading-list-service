@@ -17,7 +17,8 @@ type Config struct {
 	// Port sets the port of the running service.
 	Port int
 	// InitialDataPath sets the path to load the initial data file.
-	// Refer to the InitialData struct for the file format.
+	// Refer to the InitialData struct for the file format. It can be set with
+	// INIT_DATA_PATH or discovered from the default mounted file location.
 	InitialDataPath string
 }
 

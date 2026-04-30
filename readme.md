@@ -15,7 +15,8 @@ A REST API service for managing a reading list of books, built with Go and the F
 
 ## Service Details
 
-Port: 9090
+Port: `9090`
+
 Base path: `/api/v1/reading-list`
 
 ### List All Books

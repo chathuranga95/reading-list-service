@@ -13,8 +13,9 @@ A REST API service for managing a reading list of books, built with Go and the F
 - **Initial Data Loading**: Optional preloading of sample data
 - **Graceful Shutdown**: Proper signal handling for clean shutdowns
 
-## API Endpoints
+## Service Details
 
+Port: 9090
 Base path: `/api/v1/reading-list`
 
 ### List All Books
